@@ -11,3 +11,59 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+img, iframe {
+  max-width: 100%;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex: 0 0 auto;
+}
+
+.header-navigation {
+  padding: 0 1rem;  
+}
+
+.category-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  margin-top: 3rem;
+}
+
+.category-description {
+  height: 150px;
+  overflow: scroll;
+}
+
+.category-description::-webkit-scrollbar {
+  width: 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;  
+}
+
+.card-content--meals {
+  flex-grow: 1;
+  height: 64px;
+}
+
+.recipe {
+  display: flex;
+  flex-direction: column;  
+}
+
+.btn-back {
+  margin: 1rem 0;
+}
