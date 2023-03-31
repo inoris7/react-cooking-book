@@ -67,3 +67,9 @@ footer {
 .btn-back {
   margin: 1rem 0;
 }
+
+.category-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, max-content));
+  gap: 0.5rem;
+}

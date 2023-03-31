@@ -15,7 +15,7 @@ function Search({cb = Function.prototype}) {
         
     return (
         <div className="col">
-            <div class="input-field col s6">
+            <div className="input-field col s6">
                 <input 
                     placeholder="Search" 
                     id="search-field" 
