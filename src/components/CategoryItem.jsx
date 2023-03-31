@@ -11,9 +11,12 @@ function CategoryItem(props) {
         <div className="row">
             <div className="col">
                 <div className="card">
-                    <div className="card-image">
+                    <Link 
+                        className="card-image"
+                        to={`/category/${mealCategory}`}   
+                    >
                         <img src={pic} alt={mealCategory} />                                    
-                    </div>
+                    </Link>
                     <div className="card-content">
                         <span className="card-title">{mealCategory}</span>
                         <p className="category-description">{description}</p>

@@ -11,9 +11,12 @@ function CategoryMeal(props) {
         <div className="row">
             <div className="col">
                 <div className="card">
-                    <div className="card-image">
+                    <Link 
+                        className="card-image"
+                        to={`/recipe/${idMeal}`}
+                    >
                         <img src={strMealThumb} alt={strMeal} />                                    
-                    </div>
+                    </Link>
                     <div className="card-content card-content--meals">
                         <span className="card-title">{strMeal}</span>                        
                     </div>
