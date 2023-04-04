@@ -4,10 +4,7 @@ function CategoryButtons(props) {
             handleSearch, 
             setfilteredCatalog,
             handleResetUrl
-        } = props;
-    // console.log('Catalog:', catalog);
-    // console.log(catalog);
-    // console.log(catalog);
+        } = props;    
 
     return (
     <div className="category-buttons">

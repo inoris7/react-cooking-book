@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import { Header } from "./layout/Header";
 import { Footer } from "./layout/Footer";
@@ -16,14 +16,14 @@ function App() {
       <Router basename="/react-cooking-book">
         <Header />
         <main className="container content">
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/about" component={About} />
-              <Route path="/contacts" component={Contact} />
-              <Route path="/category/:name" component={Category} />
-              <Route path="/recipe/:id" component={Recipe} />
-              <Route component={NotFound} />
-            </Switch>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contacts" element={<Contact />} />
+              <Route path="/category/:name" element={<Category />} />
+              <Route path="/recipe/:id" element={<Recipe />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
         </main>      
         <Footer />
       </Router>  

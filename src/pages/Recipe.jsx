@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { getMealById } from "../api";
 import { Preloader } from "../components/Preloader";
 
 function Recipe() { 
-    const {goBack} = useHistory();   
+    const navigate = useNavigate();   
     const [recipe = {}, setRecipe] = useState();
     const {id} = useParams();    
     const {
@@ -14,19 +14,14 @@ function Recipe() {
         strCategory,
         strArea,
         strYoutube
-    } = recipe;
-    
-    // const keys = Object.keys(recipe);
-    // const keysIngr = keys.filter(el =>  el.includes('strIngredient'));
-    // console.log(keys);
-    // console.log(keysIngr);
+    } = recipe;    
 
     useEffect(() => {
         getMealById(id).then(data => setRecipe(data.meals[0]));
     }, [id]);
 
     return <>
-        <button className="btn btn-back" onClick={goBack}>Back</button>
+        <button className="btn btn-back" onClick={() => navigate(-1)}>Back</button>
         {   
             !recipe ? <Preloader /> : (
                 <div className="recipe">                    

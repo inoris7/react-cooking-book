@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { getFilteredByCategory } from "../api";
 import { Preloader } from "../components/Preloader";
 import { CategoryMeal } from "../components/CategoryMeal";
@@ -7,14 +7,14 @@ import { CategoryMeal } from "../components/CategoryMeal";
 function Category() {
     const [meals, setMeals] = useState([]);
     const {name} = useParams();
-    const {goBack} = useHistory();      
+    const navigate = useNavigate();      
 
     useEffect(() => {
         getFilteredByCategory(name).then(data => setMeals(data.meals));
     }, [name]);
 
     return <>
-        <button className="btn btn-back" onClick={goBack}>Back</button>
+        <button className="btn btn-back" onClick={() => navigate(-1)}>Back</button>
         {
             !meals.length ? <Preloader /> :
                 <>
@@ -32,7 +32,7 @@ function Category() {
                 </>
             
         }
-        <button className="btn btn-back" onClick={goBack}>Back</button>
+        <button className="btn btn-back" onClick={() => navigate(-1)}>Back</button>
     </>
 };
 

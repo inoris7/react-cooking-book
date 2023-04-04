@@ -1,6 +1,6 @@
 import { getAllCategories } from "../api";
 import { useEffect, useState } from "react";
-import { useHistory, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { CategoryList } from "../components/CategoryList";
 import { Preloader } from "../components/Preloader";
 import { Search } from "../components/Search";
@@ -10,10 +10,10 @@ function Home() {
     const [catalog, setCatalog] = useState([]);
     const [filteredCatalog, setfilteredCatalog] = useState([]);
     const {path, search} = useLocation();
-    const {push} = useHistory();
+    const navigate = useNavigate();
 
     const handleResetUrl = () => {
-        push(
+        navigate(
             {
                 path,
                 search: ''
@@ -27,7 +27,7 @@ function Home() {
             item.strCategory.toLowerCase()
                 .includes(str.toLowerCase())));
         
-        push(
+        navigate(
             {
                 path,
                 search: `?search=${str}`
