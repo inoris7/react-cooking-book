@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/react-cooking-book/static/css/main.5201423b.css",
-    "main.js": "/react-cooking-book/static/js/main.ea5fabcf.js",
+    "main.js": "/react-cooking-book/static/js/main.8f4a93ca.js",
     "index.html": "/react-cooking-book/index.html",
     "main.5201423b.css.map": "/react-cooking-book/static/css/main.5201423b.css.map",
-    "main.ea5fabcf.js.map": "/react-cooking-book/static/js/main.ea5fabcf.js.map"
+    "main.8f4a93ca.js.map": "/react-cooking-book/static/js/main.8f4a93ca.js.map"
   },
   "entrypoints": [
     "static/css/main.5201423b.css",
-    "static/js/main.ea5fabcf.js"
+    "static/js/main.8f4a93ca.js"
   ]
 }
